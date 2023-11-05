@@ -1,0 +1,40 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.hero_services {
+    background-image: url('../../../public/hero-service.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 500px;
+    width: 100%;
+
+    .hero_title {
+        backdrop-filter: blur(2px);
+        height: inherit;
+        width: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h2 {
+            background-color: v.$white-opacity;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 4.5rem;
+            width: 100%;
+            text-align: center;
+            @include m.tablet {
+                font-size: 9rem;
+            }
+        }
+        p {
+            color: v.$white;
+            text-align: center;
+            font-size: 2rem;
+            @include m.tablet {
+                font-size: 3rem;
+            }
+        }
+    }
+}

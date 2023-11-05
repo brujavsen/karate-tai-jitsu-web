@@ -1,0 +1,15 @@
+/*Abstracts*/
+@use './scss/abstracts/variables';
+@use './scss/abstracts/normalize';
+@use './scss/abstracts/mixins';
+
+/*Base*/
+@use './scss/base/base';
+@use './scss/base/resets';
+
+/*Layout*/
+@use './scss/layout/header';
+@use './scss/layout/index';
+@use './scss/layout/dojo';
+@use './scss/layout/services';
+@use './scss/layout/footer';
