@@ -57,23 +57,108 @@
     border: 5px solid v.$primary-c;
 }
 .first_class {
-    background-color: v.$white;
+    background-color: v.$black;
     width: fit-content;
-    padding: .2rem;
-    font-size: 3.5rem;
+    font-size: 3.2rem;
+    padding: .3rem;
     text-align: center;
-    margin: -8rem auto 3rem auto;
+    margin: -8rem auto 5rem auto;
     font-family: v.$second-font;
     font-weight: bold;
-    border: 3px solid v.$black;
-    color: v.$primary-c;
+    color: v.$white;
 
     @include m.tablet {
-        font-size: 5.5rem;
-        padding: 0 5rem;
+        font-size: 5rem;
+        padding: .3rem 5rem;
         margin: -85px auto 5rem auto;
     }
 }
+.service-index-title {
+    margin: 5rem 0;
+    padding: 2rem;
+    text-align: center;
+    font-size: 2.6rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    @include m.tablet {
+        font-size: 3.5rem;
+    }
+    .service-btn {
+        padding: 0;
+        color: v.$primary-c;
+        text-decoration: underline;
+        font-size: 2.6rem;
+        @include m.tablet {
+            font-size: 3.5rem;
+        }
+    }
+}
+.service-index {
+    display: flex;
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+    .slide {
+        display: flex;
+        width: 100%;
+        position: relative;
+        img {
+            width: 0px;
+            flex-grow: 1;
+            object-fit: cover;
+            opacity: .8;
+            transition: .5s ease-in-out;
+            filter: grayscale(100);
+            &:hover {
+                cursor: pointer;
+                width: 250px;
+                @include m.tablet {
+                    width: 400px;
+                }
+                opacity: 1;
+                filter: contrast(120%);
+            }
+            z-index: 1;
+        }
+        small {
+            position: absolute;
+            font-size: 2.5rem;
+            @include m.tablet {
+                font-size: 3.5rem;
+            }
+            text-align: center;
+            font-weight: bold;
+            left: 0;
+            right: 0;
+            bottom: 0px;
+            backdrop-filter: blur(2px);
+            color: v.$white;
+            background-color: rgba(0, 0, 0, 0.866);
+            opacity: 0;
+            padding: .5rem;
+            overflow: hidden;
+            z-index: 0;
+            transition: 1s ease-in-out;
+        }
+        & img:hover~small {
+            opacity: 1;
+            z-index: 2;
+        }
+        svg {
+            position: absolute;
+            font-size: 2.5rem;
+            opacity: .7;
+            color: v.$white;
+            background-color: v.$black;
+            border-radius: 20%;
+            @include m.tablet {
+                display: none;
+            }
+            z-index: 3;
+        }
+    }
+}
+
 .benefit_section {
     margin: 8rem auto;
     h2 {
@@ -169,13 +254,13 @@
             height: 10px;
             padding: 0 20px;
             text-align: center;
-            opacity: 0;
+            display: none;
             transition: 0.5s;
             color: v.$white;
         }
         &:hover .card_cnt {
             top: 70px;
-            opacity: 1;
+            display: block;
         }
     }
     .final_info {
@@ -202,17 +287,6 @@
             margin-bottom: 10rem;
             @include m.tablet {
                 font-size: 3rem;
-            }
-        }
-        .service-btn {
-            padding: 0;
-            text-transform: capitalize;
-            color: v.$primary-c;
-            background-color: transparent;
-            text-decoration: underline;
-            font-size: 3rem;
-            @include m.tablet {
-                font-size: 4rem;
             }
         }
     }

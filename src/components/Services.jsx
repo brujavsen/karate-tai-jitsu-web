@@ -1,6 +1,19 @@
 import React from 'react'
 
 const Services = () => {
+
+  let services = [
+    {url: "/service-1.jpeg", title: "Clases de Karate"},
+    {url: "/service-1.jpeg", title: "Defensa Personal"},
+    {url: "/service-4.jpeg", title: "Actividades Recreativas"},
+    {url: "/service-2.jpeg", title: "Uso de armas tradicionales (kobudo)"},
+    {url: "/service-5.jpeg", title: "Torneos nacionales e internacionales"},
+    {url: "/service-6.jpeg", title: "Graduaciones Avaladas"},
+    {url: "/service-3.jpeg", title: "Paseos"},
+    {url: "/service-7.jpeg", title: "Campamentos"},
+    {url: "/service-7.jpeg", title: "Encuentros"}
+  ];
+
   return (
     <>
       <div className='hero_services'>
@@ -13,33 +26,11 @@ const Services = () => {
           <h2>Explora nuestra Propuesta Integral de Karate Tai Jitsu</h2>
           <p>Con profesores capacitados, con más de 15 años de experiencia</p>
         </div>
-        <article>
-          <h3>Clases de Karate</h3>
-        </article>
-        <article>
-          <h3>Defensa Personal</h3>
-        </article>
-        <article>
-          <h3>Actividades recreativas</h3>
-        </article>
-        <article>
-          <h3>Uso de armas tradicionales (kobudo)</h3>
-        </article>
-        <article>
-          <h3>Torneos Nacionales e Internacionales</h3>
-        </article>
-        <article>
-          <h3>Graduaciones Avaladas</h3>
-        </article>
-        <article>
-          <h3>Paseos</h3>
-        </article>
-        <article>
-          <h3>Campamentos</h3>
-        </article>
-        <article>
-          <h3>Encuentros</h3>
-        </article>
+        {
+          services?.map(service => (
+            <h2>{service.title}</h2>
+          ))
+        }
       </section>
     </>
   )
