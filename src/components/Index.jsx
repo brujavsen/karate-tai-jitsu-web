@@ -4,13 +4,11 @@ import { TbPlaneTilt, TbHandClick } from "react-icons/tb";
 
 const Index = () => {
   let slides = [
-      {url: "/service-1.jpeg", title: "Defensa Personal"},
       {url: "/service-2.jpeg", title: "Torneos"},
       {url: "/service-3.jpeg", title: "Paseos"},
       {url: "/service-4.jpeg", title: "Actividades Recreativas"},
       {url: "/service-5.jpeg", title: "Uso de Armas Japonesas"},
       {url: "/service-6.jpeg", title: "Graduaciones"},
-      {url: "/service-7.jpeg", title: "Campamentos"}
   ];
 
   let cardInfo = [
@@ -42,15 +40,20 @@ const Index = () => {
       </section>
       <hr className='lbreak' />
       <p className='first_class'>Te invitamos a tu primer clase gratis</p>
-      <h2 className='service-index-title'>Explora nuestra <Link to={{ pathname: '/services', state: { scrollToTop: true }}} onClick={scrollToTop} className='service-btn'>Propuesta Integral</Link> de Karate Tai Jitsu y desbloquea un mundo de técnicas y conocimientos completos.</h2>
-      <section className='service-index'>
-        {slides?.map((slide, slideIndex) => (
-            <div className='slide' key={slideIndex}>
-              <img src={slide.url} alt={slide.title}/>
-              <small>{slide.title}</small>
-              <TbHandClick/>
-            </div>
-        ))}
+      <section className='section_services'>
+        <h2 className='services-index-title'>Explora nuestra <span>Propuesta Integral</span> de Karate Tai Jitsu y desbloquea un mundo de técnicas y conocimientos completos.</h2>
+        <article className='service-index'>
+          {slides?.map((slide, slideIndex) => (
+              <div className='slide' key={slideIndex}>
+                <img src={slide.url} alt={slide.title}/>
+                <small>{slide.title}</small>
+                <TbHandClick/>
+              </div>
+          ))}
+        </article>
+        <div className='services-index-btn'>
+          <Link to={{ pathname: '/services', state: { scrollToTop: true }}} onClick={scrollToTop} className='service-btn'>Ir a Propuesta</Link>
+        </div>
       </section>
       <section className='benefit_section'>
         <h2>¿Por qué hacer Tai Jitsu?</h2>

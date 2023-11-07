@@ -73,88 +73,108 @@
         margin: -85px auto 5rem auto;
     }
 }
-.service-index-title {
-    margin: 5rem 0;
-    padding: 2rem;
-    text-align: center;
-    font-size: 2.6rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    @include m.tablet {
-        font-size: 3.5rem;
-    }
-    .service-btn {
-        padding: 0;
-        color: v.$primary-c;
-        text-decoration: underline;
+.section_services {
+    height: 700px;
+    .services-index-title {
+        margin: 9rem auto 5rem auto;
+        padding: 2rem;
+        text-align: center;
         font-size: 2.6rem;
+        font-weight: 400;
+        text-transform: uppercase;
         @include m.tablet {
             font-size: 3.5rem;
         }
+    
+        span {
+            color: v.$primary-c;
+        }
     }
-}
-.service-index {
-    display: flex;
-    width: 100%;
-    height: 400px;
-    margin: 0 auto;
-    .slide {
+    .services-index-btn {
+        margin: 5rem auto 15rem auto;
+        text-align: center;
+        .service-btn {
+            background-color: v.$primary-c;
+            color: v.$white;
+            box-shadow: 7px 7px 10px v.$primary-c;
+            padding: 1.5rem 5rem;
+            font-size: 2.5rem;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: .3s ease-in-out;
+            @include m.tablet {
+                font-size: 3rem;
+            }
+            &:hover {
+                box-shadow: 10px 10px 10px v.$primary-c;
+                background-color: v.$black;
+                color: v.$white;
+            }
+        }
+    }
+    .service-index {
         display: flex;
         width: 100%;
-        position: relative;
-        img {
-            width: 0px;
-            flex-grow: 1;
-            object-fit: cover;
-            opacity: .8;
-            transition: .5s ease-in-out;
-            filter: grayscale(100);
-            &:hover {
-                cursor: pointer;
-                width: 250px;
-                @include m.tablet {
-                    width: 400px;
+        height: 400px;
+        margin: 0 auto;
+        .slide {
+            display: flex;
+            width: 100%;
+            position: relative;
+            img {
+                width: 0px;
+                flex-grow: 1;
+                object-fit: cover;
+                opacity: .8;
+                transition: .5s ease-in-out;
+                filter: grayscale(100);
+                &:hover {
+                    cursor: pointer;
+                    width: 250px;
+                    @include m.tablet {
+                        width: 500px;
+                    }
+                    opacity: 1;
+                    filter: contrast(120%);
                 }
+                z-index: 1;
+            }
+            small {
+                position: absolute;
+                font-size: 2.5rem;
+                @include m.tablet {
+                    font-size: 3.5rem;
+                }
+                text-align: center;
+                font-weight: bold;
+                left: 0;
+                right: 0;
+                bottom: 0px;
+                backdrop-filter: blur(2px);
+                color: v.$white;
+                background-color: rgba(0, 0, 0, 0.866);
+                opacity: 0;
+                padding: .5rem;
+                overflow: hidden;
+                z-index: 0;
+                transition: 1s ease-in-out;
+            }
+            & img:hover~small {
                 opacity: 1;
-                filter: contrast(120%);
+                z-index: 2;
             }
-            z-index: 1;
-        }
-        small {
-            position: absolute;
-            font-size: 2.5rem;
-            @include m.tablet {
-                font-size: 3.5rem;
+            svg {
+                position: absolute;
+                font-size: 2.5rem;
+                opacity: .7;
+                color: v.$white;
+                background-color: v.$black;
+                border-radius: 20%;
+                @include m.tablet {
+                    display: none;
+                }
+                z-index: 3;
             }
-            text-align: center;
-            font-weight: bold;
-            left: 0;
-            right: 0;
-            bottom: 0px;
-            backdrop-filter: blur(2px);
-            color: v.$white;
-            background-color: rgba(0, 0, 0, 0.866);
-            opacity: 0;
-            padding: .5rem;
-            overflow: hidden;
-            z-index: 0;
-            transition: 1s ease-in-out;
-        }
-        & img:hover~small {
-            opacity: 1;
-            z-index: 2;
-        }
-        svg {
-            position: absolute;
-            font-size: 2.5rem;
-            opacity: .7;
-            color: v.$white;
-            background-color: v.$black;
-            border-radius: 20%;
-            @include m.tablet {
-                display: none;
-            }
-            z-index: 3;
         }
     }
 }
@@ -265,28 +285,34 @@
     }
     .final_info {
         width: 90%;
-        margin: 0 auto;
+        margin: 10rem auto 0 auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         p {
             font-size: 3rem;
-            margin-bottom: 5rem;
             @include m.tablet {
                 font-size: 4rem;
             }
         }
         a {
-            background-color: v.$primary-c;
-            color: v.$white;
+            background-color: v.$white;
+            color: v.$primary-c;
+            box-shadow: 7px 7px 10px v.$black;
             padding: 1.5rem 5rem;
             font-size: 2.5rem;
-            border-radius: 2px;
+            border-radius: 5px;
             text-transform: uppercase;
-            margin-bottom: 10rem;
+            transition: .3s ease-in-out;
             @include m.tablet {
                 font-size: 3rem;
+            }
+            &:hover {
+                box-shadow: 10px 10px 10px v.$black;
+                transform: translateY(-5px);
+                background-color: v.$primary-c;
+                color: v.$white;
             }
         }
     }
