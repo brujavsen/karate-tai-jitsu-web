@@ -3,6 +3,7 @@ import { Routes, Route, NavLink, BrowserRouter} from 'react-router-dom';
 import Index from '../components/Index';
 import Dojos from '../components/Dojos';
 import Services from '../components/Services';
+import Galery from '../components/Galery';
 import Error from '../components/Error';
 import { BiMenu, BiX } from "react-icons/bi";
 
@@ -33,6 +34,10 @@ const RouterMain = () => {
                         to="/services"
                         className={({isActive}) => isActive ? "active" : ""}
                     >Propuesta Integral</NavLink>
+                    <NavLink 
+                        to="/galery"
+                        className={({isActive}) => isActive ? "active" : ""}
+                    >Galeria</NavLink>
                 </nav>
             </header>
             {/* Cargar componentes */}
@@ -42,6 +47,7 @@ const RouterMain = () => {
                 <Route path='/index' element={<Index/>}></Route>
                 <Route path='/dojos' element={<Dojos/>}></Route>
                 <Route path='/services' element={<Services/>}></Route>
+                <Route path='/galery' element={<Galery/>}></Route>
                 <Route path='*' element={<Error/>}></Route>
             </Routes>
 

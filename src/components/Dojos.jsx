@@ -12,7 +12,7 @@ const Dojos = () => {
       <div className='hero_dojo'>
         <div className='hero_title'>
           <h2>Dojos Habilitados</h2>
-          <p>Tu viaje comienza aquí.</p>
+          <p>Tu viaje comienza aquí</p>
         </div>
       </div>
       <div className='dojos'>
