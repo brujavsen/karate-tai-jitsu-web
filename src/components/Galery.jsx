@@ -1,8 +1,10 @@
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import { BiXCircle } from "react-icons/bi";
 
 const Galery = () => {
-    const [imageSelected, setImageSelected] = useState();
+    const [imageSelected, setImageSelected] = useState(null);
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
     const [images, setImages] = useState([
         "/galery/image-1.jpeg",
         "/galery/image-2.jpeg",
@@ -33,20 +35,38 @@ const Galery = () => {
         "/galery/image-27.jpeg",
     ]);
 
-    const popup = useRef();
-
     const firstTenImages = images.slice(0, 9);
     const secondTenImages = images.slice(9, 18);
     const thirdTenImages = images.slice(18, 27);
 
     const openImage = (image) => {
-        setImageSelected(image)
-        const hidden = document.querySelector('.hidden')
-        hidden.classList.remove('hidden');
+        setImageSelected(image);
+        setIsModalVisible(true);
     };
-    const closeImage = (pop) => {
-        pop.current.classList.add('hidden');
-    }
+
+    const closeImage = () => {
+        setImageSelected(null);
+        setIsModalVisible(false);
+    };
+
+    useEffect(()=> {
+        const handleKeyDown = e => {
+            if(e.key === 'Escape') {
+                closeImage();
+            }
+        };
+
+        if(isModalVisible) {
+            window.addEventListener('keydown', handleKeyDown);
+        } else {
+            window.removeEventListener('keydown', handleKeyDown);
+        }
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        }
+    }, [isModalVisible]);
+
     return (
         <>
             <div className="hero_galery">
@@ -90,9 +110,11 @@ const Galery = () => {
                     ))}
                 </div>
             </section>
-            <div className="popup-img hidden" ref={popup}>
-                <BiXCircle onClick={e => closeImage(popup)}/>
-                <img loading='lazy' src={imageSelected} alt={`img`} />
+            <div className={`popup-img ${isModalVisible ? '' : 'hidden'}`}>
+                <BiXCircle className="close-icon" onClick={closeImage} />
+                {imageSelected && (
+                    <img loading="lazy" src={imageSelected} alt={`img`} />
+                )}
             </div>
         </>
     );
