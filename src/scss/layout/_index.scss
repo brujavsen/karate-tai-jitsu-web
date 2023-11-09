@@ -35,8 +35,8 @@
             margin-bottom: 0;
         }
         h2 {
-            font-size: 4rem;
-            font-weight: 500;
+            font-size: 4.2rem;
+            font-weight: 800;
             line-height: 2;
             text-transform: uppercase;
         }
@@ -64,12 +64,13 @@
     background-color: v.$black;
     width: fit-content;
     font-size: 3.2rem;
-    padding: .3rem;
+    padding: 2rem 0;
     text-align: center;
     margin: -8rem auto 5rem auto;
     font-family: v.$second-font;
-    font-weight: bold;
-    color: v.$white;
+    font-weight: 600;
+    color: yellow;
+    animation: colorful 2s linear infinite;
 
     @include m.tablet {
         font-size: 5rem;
@@ -121,12 +122,20 @@
         width: 100%;
         height: 400px;
         margin: 0 auto;
+        .slide:nth-child(4) {
+            display: none;
+            @include m.tablet {
+                display: flex;
+            }
+        }
         .slide {
             display: flex;
             width: 100%;
+            height: 100%;
             position: relative;
             img {
                 width: 0px;
+                height: inherit;
                 flex-grow: 1;
                 object-fit: cover;
                 opacity: .8;
@@ -321,3 +330,5 @@
         }
     }
 }
+
+@keyframes colorful {100%{filter: hue-rotate(360deg);}}
