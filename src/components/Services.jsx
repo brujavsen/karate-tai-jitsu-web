@@ -39,7 +39,7 @@ const Services = () => {
                       <h2>{service.title}</h2>
                       <p>{service.desc}</p>
                     </div>
-                    <img src={service.url} alt={service.title}/>
+                    <img loading='lazy' height={300} width={300} src={service.url} alt={service.title}/>
                   </div>
                 </div>
               </section>

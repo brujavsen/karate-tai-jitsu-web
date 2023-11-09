@@ -63,7 +63,7 @@ const Galery = () => {
                             className="image_item"
                             onClick={() => openImage(image)}
                         >
-                            <img src={image} alt={`img ${index + 1}`} />
+                            <img loading='lazy' src={image} alt={`img ${index + 1}`} />
                         </div>
                     ))}
                 </div>
@@ -74,7 +74,7 @@ const Galery = () => {
                             className="image_item"
                             onClick={() => openImage(image)}
                         >
-                            <img src={image} alt={`img ${index + 11}`} />
+                            <img loading='lazy' src={image} alt={`img ${index + 11}`} />
                         </div>
                     ))}
                 </div>
@@ -85,14 +85,14 @@ const Galery = () => {
                             className="image_item"
                             onClick={() => openImage(image)}
                         >
-                            <img src={image} alt={`img ${index + 21}`} />
+                            <img loading='lazy' src={image} alt={`img ${index + 21}`} />
                         </div>
                     ))}
                 </div>
             </section>
             <div className="popup-img hidden" ref={popup}>
                 <BiXCircle onClick={e => closeImage(popup)}/>
-                <img src={imageSelected} alt={`img`} />
+                <img loading='lazy' src={imageSelected} alt={`img`} />
             </div>
         </>
     );
