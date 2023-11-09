@@ -12,16 +12,20 @@
         margin-top: 5rem;
         source {
             width: 50%;
+            height: 50%;
         }
         img {
+            height: 50%;
             width: 50%;
         }
         @include m.tablet {
             source {
                 width: 80%;
+                height: 80%;
             }
             img {
                 width: 80%;
+                height: 80%;
             }
         }
     }

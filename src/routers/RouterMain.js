@@ -14,7 +14,7 @@ const RouterMain = () => {
             <header className='header'>
                 <picture className='logo'>
                     <source className='image_header' srcSet="/logo.webp"  type='image/webp' />
-                    <img className='image_header' loading='lazy' src="/logo.jpg" alt="logotipo img" />
+                    <img height={30} width={30} className='image_header' loading='lazy' src="/logo.jpg" alt="logotipo img" />
                 </picture>
                 <input type='checkbox' id='check'/>
                 <label htmlFor='check' className='icons'>

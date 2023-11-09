@@ -4,11 +4,11 @@ import { TbPlaneTilt, TbHandClick } from "react-icons/tb";
 
 const Index = () => {
   let slides = [
-      {url: "/service-2.jpeg", title: "Torneos"},
-      {url: "/service-3.jpeg", title: "Paseos"},
-      {url: "/service-4.jpeg", title: "Actividades Recreativas"},
-      {url: "/service-5.jpeg", title: "Uso de Armas Japonesas"},
-      {url: "/service-6.jpeg", title: "Graduaciones"},
+      {url: "/service-2.jpeg", urlWbp: '/service-2.webp', title: "Torneos"},
+      {url: "/service-3.jpeg", urlWbp: '/service-3.webp', title: "Paseos"},
+      {url: "/service-4.jpeg", urlWbp: '/service-4.webp', title: "Actividades Recreativas"},
+      {url: "/service-5.jpeg", urlWbp: '/service-5.webp', title: "Uso de Armas Japonesas"},
+      {url: "/service-6.jpeg", urlWbp: '/service-6.webp', title: "Graduaciones"},
   ];
 
   let cardInfo = [
@@ -31,7 +31,7 @@ const Index = () => {
       <section className='hero_index'>
         <picture className='logo'>
           <source srcSet="/logo.webp"  type='image/webp' />
-          <img loading='lazy' src="/logo.jpg" alt="logotipo img" />
+          <img width={400} height={400} loading='lazy' src="/logo.jpg" alt="logotipo img" />
         </picture>
         <div className='title'>
           <h2>Escuela Tai Jitsu</h2>
@@ -45,7 +45,7 @@ const Index = () => {
         <article className='service-index'>
           {slides?.map((slide, slideIndex) => (
               <div className='slide' key={slideIndex}>
-                <img src={slide.url} alt={slide.title}/>
+                <img loading='lazy' src={slide.url} alt={slide.title}/>
                 <small>{slide.title}</small>
                 <TbHandClick/>
               </div>
