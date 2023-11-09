@@ -23,7 +23,7 @@ const Index = () => {
   ];
 
   const scrollToTop = () => {
-    window.scrollTo(0, 0); // Mueve la página al principio
+    window.scrollTo(0, 0);
   };
 
   return (
