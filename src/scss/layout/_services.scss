@@ -81,7 +81,10 @@
                     position: absolute;
                     bottom: 0;
                     width: 100%;
-                    padding: 5rem;
+                    padding: 3rem;
+                    @include m.tablet {
+                        padding: 5rem;
+                    }
                     background-color: rgba(30, 30, 30, 0.791);
                     backdrop-filter: blur(3px);
                     h2 {

@@ -21,7 +21,7 @@ const Dojos = () => {
             <div className='img'></div>
             <h3>Central <br/>(Gimnasio Gimbo)</h3>
             <p>
-            Martes y Jueves <span>19:00 Hs</span> | <span>20:00 Hs</span> (Adolescentes y Adultos)
+            Martes y Jueves <span>19:00 Hs</span> (Niños y Niñas) | <span>20:00 Hs</span> (Adolescentes y Adultos)
             </p>
           </div>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d330.5188723175836!2d-56.05856719968324!3d-34.745629345310434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a02f32a11fc93d%3A0xeadef3cd032206fb!2sGimnasio%20Gimbo!5e0!3m2!1ses!2suy!4v1698958120803!5m2!1ses!2suy" width="600" height="450" style={{border:"0"}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
