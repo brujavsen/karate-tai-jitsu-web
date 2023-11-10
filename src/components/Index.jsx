@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { TbPlaneTilt, TbHandClick } from "react-icons/tb";
+import { MdOutlinePhotoCamera } from "react-icons/md";
 
 const Index = () => {
   let slides = [
@@ -71,6 +72,14 @@ const Index = () => {
         <div className='final_info'>
           <p>¡Únete a nuestro centro Tai Jitsu y experimenta todos estos beneficios en tu propio viaje hacia la salud física y mental!</p>
           <Link to={{ pathname: '/dojos', state: { scrollToTop: true }}} onClick={scrollToTop}>Visita nuestros Dojos <TbPlaneTilt/></Link>
+        </div>
+        <div className='final_galery'>
+          <div className='info_galery'>
+            <p>¿Quieres conocer más a través de fotos?</p>
+            <Link to={{ pathname: '/galery', state: { scrollToTop: true }}} onClick={scrollToTop}>
+              Sumérgete en nuestra galería <MdOutlinePhotoCamera/>
+            </Link>
+          </div>
         </div>
       </section>
     </>
