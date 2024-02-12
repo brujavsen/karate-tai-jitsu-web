@@ -120,7 +120,7 @@ const Galery = () => {
             <div className={`popup-img ${isModalVisible ? '' : 'hidden'}`}>
                 <BiXCircle className="close-icon" onClick={closeImage} />
                 {imageSelected && (
-                    <img loading="lazy" src={imageSelected} alt={`img`} />
+                    <img loading="lazy" src={imageSelected} alt={`img`} onClick={closeImage}/>
                 )}
             </div>
         </>

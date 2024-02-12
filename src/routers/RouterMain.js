@@ -9,6 +9,9 @@ import { BiMenu, BiX } from "react-icons/bi";
 
 const RouterMain = () => {
     let year = new Date().getFullYear();
+    const closeMenu = ()=> {
+        document.querySelector('#check').checked = false;
+    }
     return (
         <BrowserRouter>
             <header className='header'>
@@ -22,19 +25,23 @@ const RouterMain = () => {
                     <BiX id='close-icon'/>
                 </label>
                 <nav className='nav'>
-                    <NavLink 
+                    <NavLink
+                        onClick={closeMenu}
                         to="/index"
                         className={({isActive}) => isActive ? "active" : ""}
                     >Inicio</NavLink>
-                    <NavLink 
+                    <NavLink
+                        onClick={closeMenu}
                         to="/dojos"
                         className={({isActive}) => isActive ? "active" : ""}
                     >Dojos</NavLink>
-                    <NavLink 
+                    <NavLink
+                        onClick={closeMenu}
                         to="/services"
                         className={({isActive}) => isActive ? "active" : ""}
                     >Propuesta Integral</NavLink>
-                    <NavLink 
+                    <NavLink
+                        onClick={closeMenu}
                         to="/galery"
                         className={({isActive}) => isActive ? "active" : ""}
                     >Galeria</NavLink>
