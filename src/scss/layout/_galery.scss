@@ -67,18 +67,17 @@
     width: 100%;
     z-index: 100;
 
-    svg {
+    .close-icon {
         position: absolute;
         top: 25px;
         right: 25px;
         font-size: 40px;
         @include m.tablet {
-            font-size: 52px;
+            font-size: 45px;
         }
         color: v.$white;
         cursor: pointer;
         z-index: 100;
-        background-color: v.$primary-c;
         opacity: .9;
         border-radius: 50%;
     }

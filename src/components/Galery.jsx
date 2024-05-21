@@ -40,11 +40,23 @@ const Galery = () => {
         "/galery/image-32.jpeg",
         "/galery/image-33.jpeg",
         "/galery/image-34.jpeg",
+        "/galery/image-35.jpg",
+        "/galery/image-36.jpg",
+        "/galery/image-37.jpg",
+        "/galery/image-38.jpg",
+        "/galery/image-39.jpg",
+        "/galery/image-40.jpg",
+        "/galery/image-41.jpg",
+        "/galery/image-42.jpg",
+        "/galery/image-43.jpg",
+        "/galery/image-44.jpg",
+        "/galery/image-45.jpg",
+        "/galery/image-46.jpg",
     ]);
 
-    const firstTenImages = images.slice(0, 11);
-    const secondTenImages = images.slice(11, 22);
-    const thirdTenImages = images.slice(22, 34);
+    const firstTenImages = images.slice(0, 15);
+    const secondTenImages = images.slice(15, 31);
+    const thirdTenImages = images.slice(31, 46);
 
     const openImage = (image) => {
         setImageSelected(image);
