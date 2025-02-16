@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { Routes, Route, NavLink, BrowserRouter} from 'react-router-dom';
-import Index from '../components/Index';
-import Dojos from '../components/Dojos';
-import Services from '../components/Services';
-import Galery from '../components/Galery';
-import Error from '../components/Error';
 import { BiMenu, BiX } from "react-icons/bi";
+
+const Index = lazy(()=> import('../components/Index'));
+const Dojos = lazy(()=> import('../components/Dojos'));
+const Services = lazy(()=> import('../components/Services'));
+const Galery = lazy(()=> import('../components/Galery'));
+const Error = lazy(()=> import('../components/Error'));
 
 const RouterMain = () => {
     let year = new Date().getFullYear();
@@ -15,10 +16,12 @@ const RouterMain = () => {
     return (
         <BrowserRouter>
             <header className='header'>
-                <picture className='logo'>
-                    <source className='image_header' srcSet="/logo.webp"  type='image/webp' />
-                    <img height={30} width={30} className='image_header' loading='lazy' src="/logo.jpg" alt="logotipo img" />
-                </picture>
+                <NavLink to="/index">
+                    <picture className='logo'>
+                        <source className='image_header' srcSet="/logo.webp"  type='image/webp' />
+                        <img height={30} width={30} className='image_header' loading='lazy' src="/logo.jpg" alt="logotipo img" />
+                    </picture>
+                </NavLink>
                 <input type='checkbox' id='check'/>
                 <label htmlFor='check' className='icons'>
                     <BiMenu id='menu-icon'/>
@@ -50,12 +53,36 @@ const RouterMain = () => {
             {/* Cargar componentes */}
             {/* Aquí se carga el componente que coincide con el path */}
             <Routes>
-                <Route path='/' element={<Index/>}></Route>
-                <Route path='/index' element={<Index/>}></Route>
-                <Route path='/dojos' element={<Dojos/>}></Route>
-                <Route path='/services' element={<Services/>}></Route>
-                <Route path='/galery' element={<Galery/>}></Route>
-                <Route path='*' element={<Error/>}></Route>
+                <Route path='/' element={
+                    <Suspense fallback={<h1>Cargando...</h1>}>
+                        <Index/>
+                    </Suspense>
+                }/>
+                <Route path='/index' element={
+                    <Suspense fallback={<h1>Cargando...</h1>}>
+                        <Index/>
+                    </Suspense>
+                }/>
+                <Route path='/dojos' element={
+                    <Suspense fallback={<h1>Cargando...</h1>}>
+                        <Dojos/>
+                    </Suspense>
+                }/>
+                <Route path='/services' element={
+                    <Suspense fallback={<h1>Cargando...</h1>}>
+                        <Services/>
+                    </Suspense>
+                }/>
+                <Route path='/galery' element={
+                    <Suspense fallback={<h1>Cargando...</h1>}>
+                        <Galery/>
+                    </Suspense>
+                }/>
+                <Route path='*' element={
+                    <Suspense fallback={<h1>Cargando...</h1>}>
+                        <Error/>
+                    </Suspense>
+                }/>
             </Routes>
 
             <footer className='footer'>

@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { BiXCircle } from "react-icons/bi";
 
 const Galery = () => {
@@ -74,13 +74,31 @@ const Galery = () => {
     "/galery/image-66.jpg",
     "/galery/image-67.jpg",
     "/galery/image-68.jpg",
+    "/galery/image-69.jpg",
+    "/galery/image-70.jpg",
+    "/galery/image-71.jpg",
+    "/galery/image-72.jpg",
+    "/galery/image-73.jpg",
+    "/galery/image-74.jpg",
+    "/galery/image-75.jpg",
+    "/galery/image-76.jpg",
+    "/galery/image-77.jpg",
+    "/galery/image-78.jpg",
+  ]);
+
+  const [imagesFirstAid, setImagesFirstAid] = useState([
+    "/first-aid/image-04.jpg",
+    "/first-aid/image-06.jpg",
+    "/first-aid/image-02.jpg",
+    "/first-aid/image-03.jpg",
+    "/first-aid/image-05.jpg",
   ]);
 
   const [loadedImages, setLoadedImages] = useState([]);
 
-  const firstTenImages = images.slice(0, 24);
-  const secondTenImages = images.slice(24, 46);
-  const thirdTenImages = images.slice(46, 68);
+  const firstTenImages = images.slice(0, 28);
+  const secondTenImages = images.slice(28, 54);
+  const thirdTenImages = images.slice(54, 78);
 
   // Función para manejar la carga de imágenes
   const handleImageLoad = (image) => {
@@ -147,6 +165,27 @@ const Galery = () => {
           <p>Conoce a través de fotos</p>
         </div>
       </div>
+      <div className="first-aid">
+        <h3>Primeros Auxilios</h3>
+        <div className="first-aid__grid">
+          {imagesFirstAid.map((image, index) => (
+              <div
+                key={index}
+                className="image_item"
+                onClick={() => openImage(image)}
+              >
+                <img
+                  className="lazy-image"
+                  data-src={image} // Usamos data-src para no cargar inmediatamente
+                  loading="lazy"
+                  alt={`img ${index + 1}`}
+                  onLoad={() => handleImageLoad(image)}
+                />
+              </div>
+            ))}
+        </div>
+      </div>
+      <h3 className="images-title">Actividades</h3>
       <section className="row">
         <div className="column">
           {firstTenImages.map((image, index) => (

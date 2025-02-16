@@ -34,13 +34,11 @@ const Index = () => {
           <source srcSet="/logo.webp"  type='image/webp' />
           <img width={400} height={400} loading='lazy' src="/logo.jpg" alt="logotipo img" />
         </picture>
-        <div className='title'>
-          <h2>Escuela Tai Jitsu</h2>
-          <p>Karate Uruguay</p>
+        <div className="text">
+          <p className='title_hero'>Escuela Tai Jitsu <br/> Karate Uruguay</p>
+          <p className='first_class'>Te invitamos a tu primer clase gratis</p>
         </div>
       </section>
-      <hr className='lbreak' />
-      <p className='first_class'>Te invitamos a tu primer clase gratis</p>
       <section className='section_services'>
         <h2 className='services-index-title'>Explora nuestra <span>Propuesta Integral</span> de Karate Tai Jitsu y desbloquea un mundo de técnicas y conocimientos completos.</h2>
         <article className='service-index'>

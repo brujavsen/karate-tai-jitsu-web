@@ -9,7 +9,7 @@
     text-align: center;
     background-color: v.$primary-c;
     .logo {
-        margin-top: 5rem;
+        margin: 2rem 0;
         source {
             width: 50%;
             height: 50%;
@@ -20,62 +20,42 @@
         }
         @include m.tablet {
             source {
-                width: 80%;
-                height: 80%;
+                width: 60%;
+                height: 60%;
             }
             img {
-                width: 80%;
-                height: 90%;
+                width: 60%;
+                height: 60%;
             }
         }
     }
-    .title {
-        margin-bottom: -5rem;
+}
+.text {
+    .title_hero {
+        text-align: center;
+        font-family: v.$thd-font;
+        font-size: 2rem;
+        color: v.$white;
+        text-shadow: 1.5px 1.5px 2px v.$black;
+        margin-bottom: 2rem;
+    }
+    .first_class {
+        font-size: 1.8rem;
+        padding: 2rem 0;
+        text-align: center;
+        font-family: v.$thd-font;
+        background-image: repeating-linear-gradient(45deg,
+            #ffd900 0%,
+            #ffffff 50%
+        );
+        background-size: 200vw 200vw;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: loop 7s infinite linear;
+    
         @include m.tablet {
-            margin-bottom: 0;
-        }
-        h2 {
-            font-size: 4.2rem;
-            font-weight: 800;
-            line-height: 2;
-            text-transform: uppercase;
-        }
-        p {
             font-size: 3rem;
-            font-weight: 300;
-            color: v.$white;
         }
-        height: 250px;
-        @include m.tablet {
-            h2 {
-                font-size: 5rem;
-            }
-            p {
-                font-size: 4.5rem;
-            }
-        }
-    }
-}
-.lbreak {
-    margin: 1rem auto 5rem auto;
-    border: 5px solid v.$primary-c;
-}
-.first_class {
-    background-color: v.$black;
-    width: fit-content;
-    font-size: 3.2rem;
-    padding: 2rem 0;
-    text-align: center;
-    margin: -8rem auto 5rem auto;
-    font-family: v.$second-font;
-    font-weight: 600;
-    color: yellow;
-    animation: colorful 2s linear infinite;
-
-    @include m.tablet {
-        font-size: 5rem;
-        padding: .3rem 5rem;
-        margin: -85px auto 5rem auto;
     }
 }
 .section_services {
@@ -202,7 +182,7 @@
         font-weight: bold;
         text-transform: uppercase;
         @include m.tablet {
-            font-size: 5rem;
+            font-size: 4rem;
         }
     }
     p{
@@ -210,7 +190,7 @@
         margin: 5rem auto 10rem auto;
         font-size: 2.3rem;
         @include m.tablet {
-            font-size: 3rem;
+            font-size: 2.6rem;
         }
         span {
             color: v.$primary-c;
@@ -234,7 +214,7 @@
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        width: 350px;
+        width: 320px;
         height: 300px;
         background-color: v.$primary-c;
         &:nth-child(odd) {
@@ -244,12 +224,12 @@
         box-shadow: 0 35px 80px rgba(0,0,0,0.15);
         transition: 0.5s;
         &:hover {
-            height: 350px;
+            height: 300px;
         }
         p {
-            font-size: 2.8rem;
+            font-size: 2rem;
             @include m.tablet {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
         }
         svg {
@@ -306,11 +286,11 @@
         align-items: center;
         background-color: v.$black;
         p {
-            font-size: 3rem;
+            font-size: 2.7rem;
             margin: 5rem 0;
             color: v.$white;
             @include m.tablet {
-                font-size: 4rem;
+                font-size: 3rem;
             }
         }
         a {
@@ -325,7 +305,7 @@
             width: fit-content;
             margin: 0 auto;
             @include m.tablet {
-                font-size: 4rem;
+                font-size: 3rem;
             }
             &:hover {
                 transform: translateY(-5px);
@@ -360,7 +340,7 @@
                 text-align: center;
                 margin: 5rem 0;
                 @include m.tablet {
-                    font-size: 5rem;
+                    font-size: 4rem;
                 }
             }
             a {
@@ -388,4 +368,11 @@
 
 }
 
-@keyframes colorful {100%{filter: hue-rotate(360deg);}}
+@keyframes loop {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: 200vw;
+    }
+}
