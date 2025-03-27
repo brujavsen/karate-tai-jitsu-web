@@ -84,6 +84,38 @@ const Galery = () => {
     "/galery/image-76.jpg",
     "/galery/image-77.jpg",
     "/galery/image-78.jpg",
+    "/galery/image-79.jpg",
+    "/galery/image-80.jpg",
+    "/galery/image-81.jpg",
+    "/galery/image-82.jpg",
+    "/galery/image-83.jpg",
+    "/galery/image-84.jpg",
+    "/galery/image-85.jpg",
+    "/galery/image-86.jpg",
+    "/galery/image-87.jpg",
+    "/galery/image-88.jpg",
+    "/galery/image-89.jpg",
+    "/galery/image-90.jpg",
+    "/galery/image-91.jpg",
+    "/galery/image-92.jpg",
+    "/galery/image-93.jpg",
+    "/galery/image-94.jpg",
+    "/galery/image-95.jpg",
+    "/galery/image-96.jpg",
+    "/galery/image-97.jpg",
+    "/galery/image-98.jpg",
+    "/galery/image-99.jpg",
+    "/galery/image-100.jpg",
+    "/galery/image-101.jpg",
+    "/galery/image-102.jpg",
+    "/galery/image-103.jpg",
+    "/galery/image-104.jpg",
+    "/galery/image-105.jpg",
+    "/galery/image-106.jpg",
+    "/galery/image-107.jpg",
+    "/galery/image-108.jpg",
+    "/galery/image-109.jpg",
+    "/galery/image-110.jpg",
   ]);
 
   const [imagesFirstAid, setImagesFirstAid] = useState([
@@ -96,9 +128,9 @@ const Galery = () => {
 
   const [loadedImages, setLoadedImages] = useState([]);
 
-  const firstTenImages = images.slice(0, 28);
-  const secondTenImages = images.slice(28, 54);
-  const thirdTenImages = images.slice(54, 78);
+  const firstTenImages = images.slice(0, 39);
+  const secondTenImages = images.slice(39, 73);
+  const thirdTenImages = images.slice(73, 110);
 
   // Función para manejar la carga de imágenes
   const handleImageLoad = (image) => {
@@ -176,7 +208,7 @@ const Galery = () => {
               >
                 <img
                   className="lazy-image"
-                  data-src={image} // Usamos data-src para no cargar inmediatamente
+                  data-src={image}
                   loading="lazy"
                   alt={`img ${index + 1}`}
                   onLoad={() => handleImageLoad(image)}
@@ -196,7 +228,7 @@ const Galery = () => {
             >
               <img
                 className="lazy-image"
-                data-src={image} // Usamos data-src para no cargar inmediatamente
+                data-src={image}
                 loading="lazy"
                 alt={`img ${index + 1}`}
                 onLoad={() => handleImageLoad(image)}
