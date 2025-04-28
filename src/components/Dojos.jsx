@@ -52,6 +52,7 @@ const Dojos = () => {
             <div className='img'></div>
             <h3>Sauce <br/> (Club excursionista amistad)</h3>
             <p>
+              Lunes y Miércoles <span>20:00 Hs (Todas las edades)</span> <br />
               Martes y Jueves <span>17:45 Hs</span> | <span>18:45 Hs</span>
             </p>
           </div>
@@ -62,7 +63,7 @@ const Dojos = () => {
             <div className='img'></div>
             <h3>Joaquín Suárez <br/> (Club de los abuelos)</h3>
             <p>
-              Martes y Jueves <span>19:00 Hs</span>
+              Martes y Jueves <span>18:00 Hs</span>
             </p>
           </div>
           <iframe title='Club de los abuelos - Joaquin Suarez' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d819.7193665449273!2d-56.036821185954!3d-34.733482900585855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a02f4e3b598d15%3A0xa97430f27b86a482!2sClub%20de%20Abuelos%20de%20Joaqu%C3%ADn%20Su%C3%A1rez!5e0!3m2!1ses-419!2suy!4v1739708189991!5m2!1ses-419!2suy" width="600" height="450" style={{border:"0"}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
